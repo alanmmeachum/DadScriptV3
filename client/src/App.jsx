@@ -10,10 +10,11 @@ import "./css/Header.css";
 import "./css/Mobile-Nav.css";
 import "./css/Blog.css";
 import "./css/index.css";
+import About from "./views/About";
 
 function App() {
   const http = axios.create({
-    baseURL: "http://localhost:8001/api",
+    baseURL: "http://localhost:8002/api",
   });
 
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/blogs" element={<Blog http={http} />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </BrowserRouter>
     </>

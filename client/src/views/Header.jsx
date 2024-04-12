@@ -13,6 +13,10 @@ const Header = () => {
     navigate("/blogs");
   };
 
+  const navigateAbout = () => {
+    navigate("/about");
+  };
+
   const navigateContact = () => {
     navigate("/contact");
   };
@@ -24,6 +28,11 @@ const Header = () => {
 
   const navigateContactMobile = () => {
     navigate("/contact");
+    setIsClicked(false);
+  };
+
+  const navigateAboutMobile = () => {
+    navigate("/about");
     setIsClicked(false);
   };
 
@@ -43,7 +52,7 @@ const Header = () => {
               </a>
             </li>
             <li>
-              <a className="header__link" href="#about">
+              <a className="header__link" onClick={navigateAbout}>
                 About
               </a>
             </li>
@@ -82,7 +91,7 @@ const Header = () => {
         <nav>
           <ul className="mobile-nav__menu">
             <li>
-              <a className="mobile-nav__link" href="#about">
+              <a className="mobile-nav__link" onClick={navigateAboutMobile}>
                 About
               </a>
             </li>
