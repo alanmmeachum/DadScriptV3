@@ -1,14 +1,28 @@
 import { EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/outline";
 import { useNavigate } from "react-router-dom";
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const navigate = useNavigate();
+  const form = useRef();
 
-  const onSubmitHandler = () => {
-    alert(
-      "Thank you for reaching out! I will contact you as soon as possible!"
-    );
-    navigate("/");
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm("service_meebqd2", "template_a3nqvd8", form.current, {
+        publicKey: "alyv01y3I4mAGs6tJ",
+      })
+      .then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+        },
+        (error) => {
+          console.log("FAILED...", error);
+        },
+        navigate("/")
+      );
   };
 
   return (
@@ -194,6 +208,7 @@ const Contact = () => {
               </h3>
               <form
                 onSubmit={onSubmitHandler}
+                ref={form}
                 method="POST"
                 className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
               >
@@ -207,10 +222,11 @@ const Contact = () => {
                   <div className="mt-1">
                     <input
                       type="text"
-                      name="first-name"
+                      name="firstName"
                       id="first-name"
                       autoComplete="given-name"
                       className="block w-full rounded-md border-gray-300 px-4 py-3 text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                      required
                     />
                   </div>
                 </div>
@@ -224,10 +240,11 @@ const Contact = () => {
                   <div className="mt-1">
                     <input
                       type="text"
-                      name="last-name"
+                      name="lastName"
                       id="last-name"
                       autoComplete="family-name"
                       className="block w-full rounded-md border-gray-300 px-4 py-3 text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                      required
                     />
                   </div>
                 </div>
@@ -245,6 +262,7 @@ const Contact = () => {
                       type="email"
                       autoComplete="email"
                       className="block w-full rounded-md border-gray-300 px-4 py-3 text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                      required
                     />
                   </div>
                 </div>
@@ -263,7 +281,7 @@ const Contact = () => {
                   <div className="mt-1">
                     <input
                       type="text"
-                      name="phone"
+                      name="phoneNumber"
                       id="phone"
                       autoComplete="tel"
                       className="block w-full rounded-md border-gray-300 px-4 py-3 text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
@@ -313,6 +331,7 @@ const Contact = () => {
                 <div className="sm:col-span-2 sm:flex sm:justify-end">
                   <button
                     type="submit"
+                    value="Send"
                     className="mt-2 inline-flex w-full items-center justify-center rounded-md border border-transparent bg-green-500 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto "
                   >
                     Submit
