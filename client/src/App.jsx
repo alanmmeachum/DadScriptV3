@@ -4,18 +4,22 @@ import Blog from "./views/Blog";
 import axios from "axios";
 import Home from "./views/Home";
 import Contact from "./views/Contact";
+import About from "./views/About";
 import "./css/App.css";
 import "./css/utils.css";
 import "./css/Header.css";
 import "./css/Mobile-Nav.css";
 import "./css/Blog.css";
 import "./css/index.css";
-import About from "./views/About";
+import { useState } from "react";
 
 function App() {
+
   const http = axios.create({
     baseURL: "http://localhost:8002/api",
   });
+
+  const [currentTab, setCurrentTab] = useState()
 
   return (
     <>

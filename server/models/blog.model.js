@@ -1,5 +1,7 @@
 import { model, Schema } from "mongoose";
 
+const date = new Date();
+
 const BlogSchema = new Schema(
   {
     title: String,
@@ -7,7 +9,7 @@ const BlogSchema = new Schema(
     readTime: Number, //We need the word count to pass into a function and calculate the average read time.
     description: String,
     author: String,
-    date: { type: Date, default: Date.now },
+    date: { type: String, default: date.toLocaleDateString() },
   },
 
   { timestamps: true }
