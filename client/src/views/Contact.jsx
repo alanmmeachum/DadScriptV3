@@ -21,7 +21,7 @@ const Contact = () => {
         (error) => {
           console.log("FAILED...", error);
         },
-        navigate("/")
+        navigate("/blogs")
       );
   };
 

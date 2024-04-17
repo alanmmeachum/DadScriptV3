@@ -45,6 +45,10 @@
   /* border: 1px dotted red; */
 }
 
+.linkedin_frame {
+  display: none;
+}
+
 /* xs */
 @media (min-width: 475px) {
   .container {
@@ -56,6 +60,9 @@
 @media (min-width: 640px) {
   .container {
     max-width: 767px;
+  }
+  .linkedin_frame {
+    display: none;
   }
 }
 
@@ -71,12 +78,18 @@
   .container {
     max-width: 1279px;
   }
+  .linkedin_frame {
+    display: flex;
+  }
 }
 
 /* xl */
 @media (min-width: 1280px) {
   .container {
     max-width: 1535px;
+  }
+  .linkedin_frame {
+    display: flex;
   }
 }
 
@@ -85,11 +98,17 @@
   .container {
     max-width: 1790px;
   }
+  .linkedin_frame {
+    display: flex;
+  }
 }
 
 /* 3xl */
 @media (min-width: 1791px) {
   .container {
     max-width: 2700px;
+  }
+  .linkedin_frame {
+    display: flex;
   }
 }
