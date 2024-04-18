@@ -41,7 +41,7 @@ const Header = () => {
       <header className="header container">
         <img
           className="logo"
-          src="src/assets/DadScriptWhite.svg"
+          src="/src/assets/DadScriptWhite.svg"
           alt="site logo"
         />
         <nav>
@@ -61,12 +61,11 @@ const Header = () => {
                 Contact
               </a>
             </li>
-            <li>
-              <a className="header__resume btn" onClick={null}>
+            {/* <li>
+              <a className="header__resume header_button" onClick={null}>
                 Resume
               </a>
-              {/* Link to a form for them to request resume */}
-            </li>
+            </li> */}
           </ul>
           <button className="header__bars">
             <svg

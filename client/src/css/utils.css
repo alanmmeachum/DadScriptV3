@@ -15,7 +15,7 @@
 
 /* 2xl */
 /* @media (min-width: 1536px) {} */
-.btn {
+.header_buton {
   display: inline-block;
   font-weight: 600;
   text-decoration: none;
@@ -29,7 +29,7 @@
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.btn:hover {
+.header_button:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgb(255, 145, 77, 0.25),
     0 10px 10px rgb(255, 145, 77, 0.22), 0 0 120px -10px var(--color1-orange);

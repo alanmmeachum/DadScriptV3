@@ -5,6 +5,7 @@ import axios from "axios";
 import IndividualBlog from "./views/IndividualBlog";
 import Contact from "./views/Contact";
 import About from "./views/About";
+import './css/Contact.css'
 import "./css/App.css";
 import "./css/utils.css";
 import "./css/Header.css";
@@ -12,6 +13,7 @@ import "./css/Mobile-Nav.css";
 import "./css/Blog.css";
 import "./css/index.css";
 import { useState } from "react";
+
 
 function App() {
 

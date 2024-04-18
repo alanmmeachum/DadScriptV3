@@ -9,7 +9,6 @@ const Contact = () => {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-
     emailjs
       .sendForm("service_meebqd2", "template_a3nqvd8", form.current, {
         publicKey: "alyv01y3I4mAGs6tJ",
@@ -20,9 +19,11 @@ const Contact = () => {
         },
         (error) => {
           console.log("FAILED...", error);
-        },
-        navigate("/blogs")
+        }
       );
+    setTimeout(() => {
+      navigate("/blogs");
+    }, 2000);
   };
 
   return (
@@ -336,6 +337,17 @@ const Contact = () => {
                   >
                     Submit
                   </button>
+                  {/* <div className="cont">
+                    <button type="submit" className="submit_button btn mt-2 inline-flex w-full items-center justify-center">
+                      <span>Submit</span>
+                      <img
+                        className="submit_image"
+                        src="https://i.cloudup.com/2ZAX3hVsBE-3000x3000.png"
+                        height="62"
+                        width="62"
+                      />
+                    </button>
+                  </div> */}
                 </div>
               </form>
             </div>

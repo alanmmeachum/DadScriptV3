@@ -2,7 +2,7 @@ const About = () => {
   return (
     <div className="relative isolate alan_background_color overflow-hidden pt-40 sm:pt-60">
       <img
-        src="src/assets/headshot.png"
+        src="/src/assets/headshot.png"
         alt=""
         className="absolute inset-0 -z-10 object-cover"
       />

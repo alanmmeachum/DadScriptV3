@@ -56,13 +56,6 @@ svg {
   user-select: none;
 }
 
-button {
-  display: inline-block;
-  padding: 0;
-  border: none;
-  background: none;
-}
-
 .alan_font_color {
   color: var(--color1-orange);
 }

@@ -8,7 +8,7 @@ const Blog = (props) => {
 
   useEffect(() => {
     http
-      .get("/blogs/661caef6084432d3482e394e")
+      .get("/blogs/662079a7d5a0ac45f25f052d")
       .then((res) => {
         console.log(res.data);
         setFeaturedPost(res.data);
@@ -58,7 +58,7 @@ const Blog = (props) => {
     <div className="pb-10">
       <div className="relative isolate overflow-hidden pt-40 pb-16 sm:pt-60">
         <img
-          src="src/assets/keyboard2.png"
+          src="/src/assets/keyboard2.png"
           alt=""
           className="absolute inset-0 -z-10 object-cover"
         />
@@ -112,7 +112,7 @@ const Blog = (props) => {
           </p>
           <div className="mt-4 flex flex-col justify-between gap-6 sm:mt-8 sm:flex-row-reverse sm:gap-8 lg:mt-4 lg:flex-col">
             <div className="flex">
-              <Link to={`/blogs/661caef6084432d3482e394e`}>
+              <Link to={`/blogs/662079a7d5a0ac45f25f052d`}>
                 <a
                   className="text-sm font-semibold leading-6 alan_font_color"
                   aria-describedby="featured-post"
@@ -122,17 +122,17 @@ const Blog = (props) => {
               </Link>
             </div>
             <div className="flex lg:border-t lg:border-gray-100/10 pb-10 lg:pt-8">
-              <a
+              {/* <a
                 href={featuredPost.author}
                 className="flex gap-x-2.5 text-sm font-semibold leading-6 text-white"
-              >
+                >
                 <img
-                  src={null}
-                  alt=""
-                  className="h-6 w-6 flex-none rounded-full bg-gray-50"
+                src={null}
+                alt=""
+                className="h-6 w-6 flex-none rounded-full bg-gray-50"
                 />
                 {featuredPost.author}
-              </a>
+              </a> */}
             </div>
           </div>
           <iframe
@@ -147,21 +147,21 @@ const Blog = (props) => {
             {allBlogs.map((blog) => (
               <article key={blog._id} className="py-12">
                 <div className="group relative max-w-xl">
-                  <time
-                    dateTime={blog.date}
-                    className="block text-sm leading-6 text-white"
-                  >
+                  <h1 className="block text-sm leading-6 text-white">
                     {blog.date}
-                  </time>
-                  <h2 className="mt-2 text-lg font-semibold text-white group-hover:text-gray-600">
+                  </h1>
+                  <h2 className="mt-2 text-lg font-semibold alan_font_color group-hover:text-white">
                     <Link to={`/blogs/${blog._id}`}>
                       <span className="absolute inset-0" />
                       {blog.title}
                     </Link>
                   </h2>
-                  {/* <p className="mt-4 text-sm leading-6 text-white">{parse(blog.content)}</p> */}
                   <p className="mt-4 text-sm leading-6 text-white">
                     {blog.description}
+                  </p>
+                  <p className="mt-4 text-sm leading-6 text-gray-400 italic">
+                    {" "}
+                    Read time: {calcReadTime(blog.readTime)} minutes
                   </p>
                 </div>
 
@@ -170,14 +170,14 @@ const Blog = (props) => {
                   <a
                     href={null}
                     className="relative flex gap-x-2.5 text-sm font-semibold leading-6 text-white"
-                  >
+                    >
                     <img
-                      src={null}
-                      alt=""
-                      className="h-6 w-6 flex-none rounded-full bg-gray-50"
+                    src={null}
+                    alt=""
+                    className="h-6 w-6 flex-none rounded-full bg-gray-50"
                     />
-                  </a>
-                </div> */}
+                    </a>
+                  </div> */}
 
                 {/* ⬆️ Author Image and name section ⬆️ */}
               </article>

@@ -12,7 +12,7 @@
   width: 100%;
   position: relative;
   z-index: 9999;
-  box-shadow: 5px 8px 25px #252525
+  box-shadow: 5px 8px 25px #252525;
 }
 
 .header__menu {
@@ -71,7 +71,7 @@
     font-weight: 600;
     transition: color 0.3s;
   }
-  .btn {
+  .header_button {
     font-size: var(--size-xl);
   }
 
@@ -128,7 +128,7 @@
     width: var(--image-size-4xl);
   }
 
-  .btn {
+  .header_button {
     font-size: var(--size-4xl);
   }
 
@@ -150,7 +150,7 @@
     width: var(--image-size-4xl);
   }
 
-  .btn {
+  .header_button {
     font-size: var(--size-4xl);
   }
 
