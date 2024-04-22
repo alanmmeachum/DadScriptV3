@@ -52,14 +52,14 @@ const About = () => {
           <figcaption className="mt-4 flex gap-x-2 text-m leading-6 text-gray-400 italics pb-5">
             --About a 3 minute read.
           </figcaption>
-          <p className="mt-6 text-xl leading-8">
+          <p className="mt-4 text-2xl leading-8">
             Hello there! I'm Alan, and I'm here to share with you the journey of
             a guy navigating his way through the world of coding. But let's
             rewind a bit, back to 1995, the year of my arrival on this planet.
           </p>
-          <div className="mt-10 max-w-2xl">
-            <p>Well...maybe not that far back...</p>
-            <p className="mt-6">
+          <div className="mt-10 max-w-2xl ">
+            <p className="text-2xl">Well...maybe not that far back...</p>
+            <p className="mt-6 text-2xl">
               Like many, my path has been a winding one, filled with trials,
               triumphs, and plenty of detours. After dipping my toes into
               various industries, I found myself drawn to the allure of coding -

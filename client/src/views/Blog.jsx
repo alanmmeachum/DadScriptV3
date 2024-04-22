@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Blog = (props) => {
   const [featuredPost, setFeaturedPost] = useState({});
   const { http } = props;
   const [allBlogs, setAllBlogs] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     http
@@ -18,6 +19,14 @@ const Blog = (props) => {
       });
   }, []);
 
+  const onSelectHandler = (e, id) => {
+    e.preventDefault()
+    console.log(id)
+    if(e.target.name == 'Edit') {
+      navigate(`/blogs/${id}/details`);
+
+    }
+  };
   // ⬇️ Dummy Featured Post ⬇️
   // const featuredPost = {
   //   id: 1,
@@ -164,6 +173,15 @@ const Blog = (props) => {
                     Read time: {calcReadTime(blog.readTime)} minutes
                   </p>
                 </div>
+                <select name="" onChange={(e) => onSelectHandler(e, blog._id)}>
+                  <option name="Edit">Edit</option>
+
+                  <option
+                    // onClick={() => onDeleteHandler(blog._id)}
+                  >
+                    Delete
+                  </option>
+                </select>
 
                 {/* ⬇️ Author Image and name section ⬇️ */}
                 {/* <div className="mt-4 flex">

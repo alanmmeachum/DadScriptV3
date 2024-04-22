@@ -1,10 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from "react";
 import Header from "./views/Header";
 import Blog from "./views/Blog";
 import axios from "axios";
 import IndividualBlog from "./views/IndividualBlog";
 import Contact from "./views/Contact";
 import About from "./views/About";
+import Details from "./views/Details";
 import './css/Contact.css'
 import "./css/App.css";
 import "./css/utils.css";
@@ -12,7 +14,6 @@ import "./css/Header.css";
 import "./css/Mobile-Nav.css";
 import "./css/Blog.css";
 import "./css/index.css";
-import { useState } from "react";
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
         <Routes>
           <Route path="/blogs" element={<Blog http={http} />} />
           <Route path="/blogs/:id" element={<IndividualBlog http={http}/>} />
+          <Route path="/blogs/:id/details" element={<Details http={http}/>} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
         </Routes>
