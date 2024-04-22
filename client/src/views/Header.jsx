@@ -56,7 +56,7 @@ const Header = () => {
                 About
               </a>
             </li>
-            <li>
+            <li className="button-87">
               <a className="header__link" onClick={navigateContact}>
                 Contact
               </a>

@@ -52,7 +52,7 @@
 /* md */
 @media (min-width: 768px) {
   .logo {
-    width: var(--image-size-xl);
+    width: var(--image-size-m);
   }
 
   .header__menu {
@@ -67,12 +67,12 @@
     color: var(--color3-text);
     text-decoration: none;
     letter-spacing: -0.05em;
-    font-size: var(--size-xl);
+    font-size: var(--size-m);
     font-weight: 600;
     transition: color 0.3s;
   }
   .header_button {
-    font-size: var(--size-xl);
+    font-size: var(--size-m);
   }
 
   .header__link:hover {
@@ -87,30 +87,30 @@
 /* lg */
 @media (min-width: 1024px) {
   .logo {
-    width: var(--image-size-2xl);
+    width: var(--image-size-l);
   }
 
   .btn {
-    font-size: var(--size-2xl);
+    font-size: var(--size-l);
   }
 
   .header__link {
-    font-size: var(--size-2xl);
+    font-size: var(--size-l);
   }
 }
 
 /* xl */
 @media (min-width: 1280px) {
   .logo {
-    width: var(--image-size-3xl);
+    width: var(--image-size-xl);
   }
 
   .btn {
-    font-size: var(--size-3xl);
+    font-size: var(--size-xl);
   }
 
   .header__link {
-    font-size: var(--size-4xl);
+    font-size: var(--size-xl);
   }
 
   .header__menu {
@@ -125,15 +125,15 @@
 /* 2xl */
 @media (min-width: 1536px) {
   .logo {
-    width: var(--image-size-4xl);
+    width: var(--image-size-xl);
   }
 
   .header_button {
-    font-size: var(--size-4xl);
+    font-size: var(--size-2xl);
   }
 
   .header__link {
-    font-size: var(--size-5xl);
+    font-size: var(--size-2xl);
   }
 
   .header__menu {
@@ -147,15 +147,15 @@
 
 @media (min-width: 2560px) {
   .logo {
-    width: var(--image-size-4xl);
+    width: var(--image-size-2xl);
   }
 
   .header_button {
-    font-size: var(--size-4xl);
+    font-size: var(--size-2xl);
   }
 
   .header__link {
-    font-size: var(--size-5xl);
+    font-size: var(--size-2xl);
   }
 
   .header__menu {
