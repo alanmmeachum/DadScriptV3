@@ -19,14 +19,14 @@ const Blog = (props) => {
       });
   }, []);
 
-  const onSelectHandler = (e, id) => {
-    e.preventDefault()
+  const onSelectHandler = (id) => {
     console.log(id)
-    if(e.target.name == 'Edit') {
-      navigate(`/blogs/${id}/details`);
-
-    }
+    navigate(`/blogs/${id}/details`);
   };
+
+  const onDeleteHandler = (id) => {
+    
+  }
   // ⬇️ Dummy Featured Post ⬇️
   // const featuredPost = {
   //   id: 1,
@@ -173,16 +173,8 @@ const Blog = (props) => {
                     Read time: {calcReadTime(blog.readTime)} minutes
                   </p>
                 </div>
-                <select name="" onChange={(e) => onSelectHandler(e, blog._id)}>
-                  <option name="Edit">Edit</option>
-
-                  <option
-                    // onClick={() => onDeleteHandler(blog._id)}
-                  >
-                    Delete
-                  </option>
-                </select>
-
+                <button className="button-5" onClick={() => onSelectHandler(blog._id)}>Edit</button>
+                <button className="button-5" onClick={() => onDeleteHandler(blog._id)}>Delete</button>
                 {/* ⬇️ Author Image and name section ⬇️ */}
                 {/* <div className="mt-4 flex">
                   <a
