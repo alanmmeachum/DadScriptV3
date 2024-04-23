@@ -36,8 +36,16 @@ const Blog = (props) => {
     navigate(`/blogs/${id}/details`);
   };
 
-  const onDeleteHandler = (e) => {
-    e.preventDefault()
+  const onDeleteHandler = (id) => {
+    http
+      .delete(`/blogs/${id}`)
+      .then((res) => {
+        console.log(res.data)
+        setAllBlogs(prevBlog => prevBlog.filter(blog => blog._id !== id))
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   }
 
   const confirm = () => {
@@ -173,7 +181,7 @@ const Blog = (props) => {
                   </p>
                 </div>
                 <button className="button-5" onClick={() => onSelectHandler(blog._id)}>Edit</button>
-                <button className="button-5" key={blog._id} onClick={confirm}>Delete</button>
+                {/* <button className="button-5" key={blog._id} onClick={() => onDeleteHandler(blog._id)}>Delete</button> */}
                 {/* ⬇️ Author Image and name section ⬇️ */}
                 {/* <div className="mt-4 flex">
                   <a
