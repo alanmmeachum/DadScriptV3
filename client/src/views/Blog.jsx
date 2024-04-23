@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+
 const Blog = (props) => {
   const [featuredPost, setFeaturedPost] = useState({});
-  const { http } = props;
-  const [allBlogs, setAllBlogs] = useState([]);
+  const { http, allBlogs, setAllBlogs } = props;
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -19,33 +19,6 @@ const Blog = (props) => {
       });
   }, []);
 
-  const onSelectHandler = (id) => {
-    console.log(id)
-    navigate(`/blogs/${id}/details`);
-  };
-
-  const onDeleteHandler = (id) => {
-    
-  }
-  // ⬇️ Dummy Featured Post ⬇️
-  // const featuredPost = {
-  //   id: 1,
-  //   title:
-  //     "We’re incredibly proud to announce we have secured $75m in Series B",
-  //   href: "#",
-  //   description:
-  //     "Libero neque aenean tincidunt nec consequat tempor. Viverra odio id velit adipiscing id. Nisi vestibulum orci eget bibendum dictum. Velit viverra posuere vulputate volutpat nunc. Nunc netus sit faucibus.",
-  //   date: "Mar 16, 2020",
-  //   datetime: "2020-03-16",
-  //   author: {
-  //     name: "Michael Foster",
-  //     href: "#",
-  //     imageUrl:
-  //       "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-  //   },
-  // };
-  // ⬆️ Dummy Featured Post ⬆️
-
   useEffect(() => {
     http
       .get("/blogs")
@@ -58,6 +31,30 @@ const Blog = (props) => {
       });
   }, []);
 
+  const onSelectHandler = (id) => {
+    console.log(id)
+    navigate(`/blogs/${id}/details`);
+  };
+
+  const onDeleteHandler = (e) => {
+    e.preventDefault()
+  }
+
+  const confirm = () => {
+    confirmDialog({
+        message: 'Are you sure you want to proceed?',
+        header: 'Confirmation',
+        icon: 'pi pi-exclamation-triangle',
+        accept: () => acceptFunc(),
+        reject: () => rejectFunc()
+    });
+}
+
+  // const onClickHandler = (id) => {
+  //   navigate('/blogs/create')
+  // }
+
+
   const calcReadTime = (words) => {
     const calculation = words / 100;
     return calculation;
@@ -66,6 +63,7 @@ const Blog = (props) => {
   return (
     <div className="pb-10">
       <div className="relative isolate overflow-hidden pt-40 pb-16 sm:pt-60">
+
         <img
           src="/src/assets/keyboard2.png"
           alt=""
@@ -79,7 +77,7 @@ const Blog = (props) => {
             className=""
             style={{
               clipPath:
-                "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
+              "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
             }}
           />
         </div>
@@ -91,7 +89,7 @@ const Blog = (props) => {
             className=""
             style={{
               clipPath:
-                "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
+              "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
             }}
           />
         </div>
@@ -153,6 +151,7 @@ const Blog = (props) => {
         </article>
         <div className="mx-auto w-full max-w-2xl border-t border-gray-900/10 pt-12 sm:pt-16 lg:mx-0 lg:max-w-none lg:border-t-0 lg:pt-0">
           <div className="-my-12 divide-y divide-gray-100/10">
+              {/* <button className="button-5" onClick={onClickHandler}>Create A Blog</button> */}
             {allBlogs.map((blog) => (
               <article key={blog._id} className="py-12">
                 <div className="group relative max-w-xl">
@@ -174,7 +173,7 @@ const Blog = (props) => {
                   </p>
                 </div>
                 <button className="button-5" onClick={() => onSelectHandler(blog._id)}>Edit</button>
-                <button className="button-5" onClick={() => onDeleteHandler(blog._id)}>Delete</button>
+                <button className="button-5" key={blog._id} onClick={confirm}>Delete</button>
                 {/* ⬇️ Author Image and name section ⬇️ */}
                 {/* <div className="mt-4 flex">
                   <a

@@ -1,66 +1,53 @@
-import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const Details = (props) => {
-  const { http } = props;
-  const { id } = useParams();
-  const navigate = useNavigate();
-
-  const [currentBlog, setCurrentBlog] = useState({
+const CreateBlog = (props) => {
+  const { http, allBlogs, setAllBlogs } = props;
+  const navigate = useNavigate()
+  const [newBlog, setNewBlog] = useState({
     title: "",
     content: "",
     readTime: 0,
     description: "",
     author: "",
-    date: "",
   });
 
-  useEffect(() => {
-    http
-      .get(`/blogs/${id}`)
-      .then((res) => {
-        console.log(res.data);
-        setCurrentBlog({
-          title: res.data.title,
-          content: res.data.content,
-          readTime: res.data.readTime,
-          description: res.data.description,
-          author: res.data.author,
-          date: res.data.date,
-        });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, [id]);
-
   const onChangeHandler = (e) => {
-    setCurrentBlog({
-      ...currentBlog,
+    setNewBlog({
+      ...newBlog,
       [e.target.name]: e.target.value,
     });
   };
 
   const onSubmitHandler = (e) => {
-    e.preventDefault();
+    e.preventDefault()
     http
-      .patch(`/blogs/${id}`, currentBlog)
-      .then((res) => {
-        console.log(res);
-        console.log(res.data);
-        navigate("/blogs");
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+        .post('/blogs', newBlog)
+        .then((res) => {
+            setAllBlogs([...allBlogs, res.data])
+            console.log(res.data)
+            setNewBlog({
+                title: "",
+                content: "",
+                readTime: 0,
+                description: "",
+                author: "",
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+        })
+        navigate('/blogs')
+  }
+
+
 
   return (
     <form className="mx-80" onSubmit={onSubmitHandler}>
       <div className="space-y-12 content-center ">
         <div className="border-b border-white/10 pb-12">
           <h2 className="text-3xl font-semibold leading-7 text-white mt-10">
-            Update The Blog
+            Create A Blog
           </h2>
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-6">
             <div className="sm:col-span-4">
@@ -75,11 +62,11 @@ const Details = (props) => {
                   <input
                     type="text"
                     name="title"
-                    value={currentBlog.title}
                     id="title"
                     autoComplete="title"
                     className="flex-1 border-0 bg-transparent py-1.5 pl-1 text-white focus:ring-0 sm:text-sm sm:leading-6"
                     onChange={onChangeHandler}
+                    value={newBlog.title}
                   />
                 </div>
               </div>
@@ -97,10 +84,10 @@ const Details = (props) => {
                   id="content"
                   name="content"
                   rows={5}
-                  value={currentBlog.content}
                   className="block w-8/12 rounded-md border-0 bg-white/5 py-1.5 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-orange-500 sm:text-sm sm:leading-6"
                   defaultValue={""}
                   onChange={onChangeHandler}
+                  value={newBlog.content}
                 />
               </div>
             </div>
@@ -116,11 +103,11 @@ const Details = (props) => {
                   <input
                     type="number"
                     name="readTime"
-                    value={currentBlog.readTime}
                     id="readtime"
                     autoComplete="readtime"
                     className="flex-1 border-0 bg-transparent py-1.5 pl-1 text-white focus:ring-0 sm:text-sm sm:leading-6"
                     onChange={onChangeHandler}
+                    value={newBlog.readTime}
                   />
                 </div>
               </div>
@@ -137,11 +124,11 @@ const Details = (props) => {
                 <textarea
                   id="description"
                   name="description"
-                  value={currentBlog.description}
                   rows={5}
                   className="block w-8/12 rounded-md border-0 bg-white/5 py-1.5 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-orange-500 sm:text-sm sm:leading-6"
                   defaultValue={""}
                   onChange={onChangeHandler}
+                  value={newBlog.description}
                 />
               </div>
             </div>
@@ -158,21 +145,21 @@ const Details = (props) => {
                   <input
                     type="text"
                     name="author"
-                    value={currentBlog.author}
                     id="author"
                     autoComplete="author"
                     className="flex-1 border-0 bg-transparent py-1.5 pl-1 text-white focus:ring-0 sm:text-sm sm:leading-6"
                     onChange={onChangeHandler}
+                    value={newBlog.author}
                   />
                 </div>
               </div>
             </div>
           </div>
-          <button className="button-5">Update</button>
+          <button className="button-5 mt-3">Create Blog</button>
         </div>
       </div>
     </form>
   );
 };
 
-export default Details;
+export default CreateBlog;

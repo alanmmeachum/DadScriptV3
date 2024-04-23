@@ -21,6 +21,10 @@ const Header = () => {
     navigate("/contact");
   };
 
+  const onCreateHandler = (id) => {
+    navigate('/blogs/create')
+  }
+
   const navigateBlogMobile = () => {
     navigate("/blogs");
     setIsClicked(false);
@@ -56,16 +60,16 @@ const Header = () => {
                 About
               </a>
             </li>
-            <li className="button-87">
+            <li > {/* revert back to button-87 */}
               <a className="header__link" onClick={navigateContact}>
                 Contact
               </a>
             </li>
-            {/* <li>
-              <a className="header__resume header_button" onClick={null}>
-                Resume
+            <li>
+              <a className="button-5" onClick={onCreateHandler}>
+                Create A Blog
               </a>
-            </li> */}
+            </li>
           </ul>
           <button className="header__bars">
             <svg

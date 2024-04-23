@@ -14,6 +14,7 @@ import "./css/Header.css";
 import "./css/Mobile-Nav.css";
 import "./css/Blog.css";
 import "./css/index.css";
+import CreateBlog from "./views/CreateBlog";
 
 
 function App() {
@@ -23,6 +24,8 @@ function App() {
   });
 
   const [currentTab, setCurrentTab] = useState() //Trying to figure out how to keep the tab (Blog/About/Contact) selected orange when that tab is selected
+  const [allBlogs, setAllBlogs] = useState([]);
+
   
 
   return (
@@ -30,9 +33,10 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/blogs" element={<Blog http={http} />} />
+          <Route path="/blogs" element={<Blog http={http} allBlogs={allBlogs} setAllBlogs={setAllBlogs} />} />
           <Route path="/blogs/:id" element={<IndividualBlog http={http}/>} />
           <Route path="/blogs/:id/details" element={<Details http={http}/>} />
+          <Route path="/blogs/create" element={<CreateBlog http={http} allBlogs={allBlogs} setAllBlogs={setAllBlogs}/>}/>
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
         </Routes>

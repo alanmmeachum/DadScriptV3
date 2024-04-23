@@ -71,9 +71,6 @@
     font-weight: 600;
     transition: color 0.3s;
   }
-  .header_button {
-    font-size: var(--size-m);
-  }
 
   .header__link:hover {
     color: var(--color1-orange);
@@ -88,10 +85,6 @@
 @media (min-width: 1024px) {
   .logo {
     width: var(--image-size-l);
-  }
-
-  .btn {
-    font-size: var(--size-l);
   }
 
   .header__link {
