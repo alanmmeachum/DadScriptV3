@@ -46,9 +46,9 @@ const IndividualBlog = (props) => {
             }}
           />
         </div>
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl pt-4 px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0">
-            <h2 className="text-5xl font-bold tracking-tight alan_font_color">
+            <h2 className="font-bold tracking-tight alan_font_color header_title">
               {currentBlog.title}
             </h2>
           </div>

@@ -2,6 +2,10 @@
   width: var(--image-size-s);
 }
 
+.header_title {
+  font-size: var(--size-2xl);
+}
+
 .header {
   display: flex;
   justify-content: space-around;
@@ -30,6 +34,9 @@
   .logo {
     width: var(--image-size-m);
   }
+  .header_title {
+    font-size: var(--size-2xl);
+  }
   .header__bars {
     color: var(--color3-text);
     width: var(--size-4xl);
@@ -42,6 +49,9 @@
   .logo {
     width: var(--image-size-l);
   }
+  .header_title {
+    font-size: var(--size-3xl);
+  }
   .header__bars {
     color: var(--color3-text);
     width: var(--size-5xl);
@@ -53,6 +63,9 @@
 @media (min-width: 768px) {
   .logo {
     width: var(--image-size-m);
+  }
+  .header_title {
+    font-size: var(--size-3xl);
   }
 
   .header__menu {
@@ -87,6 +100,10 @@
     width: var(--image-size-l);
   }
 
+  .header_title {
+    font-size: var(--size-3xl);
+  }
+
   .header__link {
     font-size: var(--size-l);
   }
@@ -96,6 +113,10 @@
 @media (min-width: 1280px) {
   .logo {
     width: var(--image-size-xl);
+  }
+
+  .header_title {
+    font-size: var(--size-4xl);
   }
 
   .btn {
@@ -129,6 +150,10 @@
     font-size: var(--size-2xl);
   }
 
+  .header_title {
+    font-size: var(--size-5xl);
+  }
+
   .header__menu {
     display: flex;
     align-items: center;
@@ -145,6 +170,10 @@
 
   .header_button {
     font-size: var(--size-2xl);
+  }
+
+  .header_title {
+    font-size: var(--size-6xl);
   }
 
   .header__link {
