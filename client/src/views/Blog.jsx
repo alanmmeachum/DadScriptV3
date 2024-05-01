@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-
 const Blog = (props) => {
   const [featuredPost, setFeaturedPost] = useState({});
   const { http, allBlogs, setAllBlogs } = props;
@@ -32,7 +31,7 @@ const Blog = (props) => {
   }, []);
 
   const onSelectHandler = (id) => {
-    console.log(id)
+    console.log(id);
     navigate(`/blogs/${id}/details`);
   };
 
@@ -40,28 +39,27 @@ const Blog = (props) => {
     http
       .delete(`/blogs/${id}`)
       .then((res) => {
-        console.log(res.data)
-        setAllBlogs(prevBlog => prevBlog.filter(blog => blog._id !== id))
+        console.log(res.data);
+        setAllBlogs((prevBlog) => prevBlog.filter((blog) => blog._id !== id));
       })
       .catch((err) => {
-        console.log(err)
-      })
-  }
+        console.log(err);
+      });
+  };
 
   const confirm = () => {
     confirmDialog({
-        message: 'Are you sure you want to proceed?',
-        header: 'Confirmation',
-        icon: 'pi pi-exclamation-triangle',
-        accept: () => acceptFunc(),
-        reject: () => rejectFunc()
+      message: "Are you sure you want to proceed?",
+      header: "Confirmation",
+      icon: "pi pi-exclamation-triangle",
+      accept: () => acceptFunc(),
+      reject: () => rejectFunc(),
     });
-}
+  };
 
   // const onClickHandler = (id) => {
   //   navigate('/blogs/create')
   // }
-
 
   const calcReadTime = (words) => {
     const calculation = words / 100;
@@ -69,9 +67,8 @@ const Blog = (props) => {
   };
 
   return (
-    <div className="pb-10">
+    <div className="">
       <div className="relative isolate overflow-hidden pt-40 pb-16 sm:pt-60">
-
         <img
           src="/src/assets/keyboard2.png"
           alt=""
@@ -85,7 +82,7 @@ const Blog = (props) => {
             className=""
             style={{
               clipPath:
-              "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
+                "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
             }}
           />
         </div>
@@ -97,10 +94,11 @@ const Blog = (props) => {
             className=""
             style={{
               clipPath:
-              "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
+                "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
             }}
           />
         </div>
+
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0">
             <h2 className="text-6xl font-bold tracking-tight text-white">
@@ -159,7 +157,7 @@ const Blog = (props) => {
         </article>
         <div className="mx-auto w-full max-w-2xl border-t border-gray-900/10 pt-12 sm:pt-16 lg:mx-0 lg:max-w-none lg:border-t-0 lg:pt-0">
           <div className="-my-12 divide-y divide-gray-100/10">
-              {/* <button className="button-5" onClick={onClickHandler}>Create A Blog</button> */}
+            {/* <button className="button-5" onClick={onClickHandler}>Create A Blog</button> */}
             {allBlogs.map((blog) => (
               <article key={blog._id} className="py-12">
                 <div className="group relative max-w-xl">
@@ -180,7 +178,12 @@ const Blog = (props) => {
                     Read time: {calcReadTime(blog.readTime)} minutes
                   </p>
                 </div>
-                <button className="button-5" onClick={() => onSelectHandler(blog._id)}>Edit</button>
+                {/* <button
+                  className="button-5"
+                  onClick={() => onSelectHandler(blog._id)}
+                >
+                  Edit
+                </button> */}
                 {/* <button className="button-5" key={blog._id} onClick={() => onDeleteHandler(blog._id)}>Delete</button> */}
                 {/* ⬇️ Author Image and name section ⬇️ */}
                 {/* <div className="mt-4 flex">

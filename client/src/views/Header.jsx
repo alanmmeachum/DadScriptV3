@@ -65,11 +65,11 @@ const Header = () => {
                 Contact
               </a>
             </li>
-            <li>
+            {/* <li>
               <a className="button-5" onClick={onCreateHandler}>
                 Create A Blog
               </a>
-            </li>
+            </li> */}
           </ul>
           <button className="header__bars">
             <svg

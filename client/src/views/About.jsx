@@ -1,13 +1,14 @@
 const About = () => {
   return (
-    <div className="relative isolate alan_background_color overflow-hidden pt-40 sm:pt-60">
+    <div className="">
+    <div className="relative isolate overflow-hidden pt-40 sm:pt-60 ">
       <img
         src="/src/assets/headshot.png"
         alt=""
-        className="absolute inset-0 -z-10 object-cover"
+        className="absolute inset-0 -z-10 object-cover "
       />
       <div
-        className="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl"
+        className="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl "
         aria-hidden="true"
       >
         <div
@@ -30,7 +31,8 @@ const About = () => {
           }}
         />
       </div>
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 ">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2 className="text-6xl font-bold tracking-tight text-white">
             About Me
@@ -41,7 +43,7 @@ const About = () => {
           </p>
         </div>
       </div>
-      <div className="alan_background_color px-6 py-10 lg:px-8">
+      <div className="px-6 py-10 lg:px-8 alan_background_color">
         <div className="mx-auto max-w-3xl text-base leading-7 text-white ">
           <p className="text-base font-semibold leading-7 alan_font_color">
             Introducing
@@ -126,6 +128,7 @@ const About = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
