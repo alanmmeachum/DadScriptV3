@@ -8,11 +8,8 @@ async function dbConnect() {
     await connect(MONGODB_URI, {
       dbName: "DadScript",
     });
-    console.log(
-      "Pinged your deployment. You have succesfully connected to MongoDB!"
-    );
+
   } catch (err) {
-    console.log(err);
     throw err;
   }
 }

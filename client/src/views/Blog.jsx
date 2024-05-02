@@ -4,17 +4,15 @@ import { Link, useNavigate } from "react-router-dom";
 const Blog = (props) => {
   const [featuredPost, setFeaturedPost] = useState({});
   const { http, allBlogs, setAllBlogs } = props;
-  const navigate = useNavigate();
 
   useEffect(() => {
     http
       .get("/blogs/662079a7d5a0ac45f25f052d")
       .then((res) => {
-        console.log(res.data);
         setFeaturedPost(res.data);
       })
       .catch((err) => {
-        console.log(err);
+        throw err
       });
   }, []);
 
@@ -22,44 +20,12 @@ const Blog = (props) => {
     http
       .get("/blogs")
       .then((res) => {
-        console.log(res.data);
         setAllBlogs(res.data);
       })
       .catch((err) => {
-        console.log(err);
+        throw err
       });
   }, []);
-
-  const onSelectHandler = (id) => {
-    console.log(id);
-    navigate(`/blogs/${id}/details`);
-  };
-
-  const onDeleteHandler = (id) => {
-    http
-      .delete(`/blogs/${id}`)
-      .then((res) => {
-        console.log(res.data);
-        setAllBlogs((prevBlog) => prevBlog.filter((blog) => blog._id !== id));
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
-  const confirm = () => {
-    confirmDialog({
-      message: "Are you sure you want to proceed?",
-      header: "Confirmation",
-      icon: "pi pi-exclamation-triangle",
-      accept: () => acceptFunc(),
-      reject: () => rejectFunc(),
-    });
-  };
-
-  // const onClickHandler = (id) => {
-  //   navigate('/blogs/create')
-  // }
 
   const calcReadTime = (words) => {
     const calculation = words / 100;
@@ -135,17 +101,6 @@ const Blog = (props) => {
               </Link>
             </div>
             <div className="flex lg:border-t lg:border-gray-100/10 pb-10 lg:pt-8">
-              {/* <a
-                href={featuredPost.author}
-                className="flex gap-x-2.5 text-sm font-semibold leading-6 text-white"
-                >
-                <img
-                src={null}
-                alt=""
-                className="h-6 w-6 flex-none rounded-full bg-gray-50"
-                />
-                {featuredPost.author}
-              </a> */}
             </div>
           </div>
           <iframe
@@ -157,7 +112,6 @@ const Blog = (props) => {
         </article>
         <div className="mx-auto w-full max-w-2xl border-t border-gray-900/10 pt-12 sm:pt-16 lg:mx-0 lg:max-w-none lg:border-t-0 lg:pt-0">
           <div className="-my-12 divide-y divide-gray-100/10">
-            {/* <button className="button-5" onClick={onClickHandler}>Create A Blog</button> */}
             {allBlogs.map((blog) => (
               <article key={blog._id} className="py-12">
                 <div className="group relative max-w-xl">
@@ -178,28 +132,6 @@ const Blog = (props) => {
                     Read time: {calcReadTime(blog.readTime)} minutes
                   </p>
                 </div>
-                {/* <button
-                  className="button-5"
-                  onClick={() => onSelectHandler(blog._id)}
-                >
-                  Edit
-                </button> */}
-                {/* <button className="button-5" key={blog._id} onClick={() => onDeleteHandler(blog._id)}>Delete</button> */}
-                {/* ⬇️ Author Image and name section ⬇️ */}
-                {/* <div className="mt-4 flex">
-                  <a
-                    href={null}
-                    className="relative flex gap-x-2.5 text-sm font-semibold leading-6 text-white"
-                    >
-                    <img
-                    src={null}
-                    alt=""
-                    className="h-6 w-6 flex-none rounded-full bg-gray-50"
-                    />
-                    </a>
-                  </div> */}
-
-                {/* ⬆️ Author Image and name section ⬆️ */}
               </article>
             ))}
           </div>

@@ -5,7 +5,6 @@ async function getAllBlogs(req, res) {
     const allBlogs = await Blog.find();
     res.json(allBlogs);
   } catch (err) {
-    console.log(err);
     res.status(400).json(err);
   }
 }
@@ -15,7 +14,6 @@ async function getOneBlog(req, res) {
     const oneBlog = await Blog.findById(req.params.id);
     res.json(oneBlog);
   } catch (err) {
-    console.log(err);
     res.status(400).json(err);
   }
 }
@@ -26,7 +24,6 @@ async function createBlog(req, res) {
     const blog = await newBlog.save();
     res.json(newBlog);
   } catch (err) {
-    console.log(err);
     res.status(400).json(err);
   }
 }
@@ -36,7 +33,6 @@ async function deleteBlog(req, res) {
     const deletedBlog = await Blog.findByIdAndDelete(req.params.id);
     res.json(deletedBlog);
   } catch (err) {
-    console.log(err);
     res.status(400).json(err);
   }
 }
@@ -54,7 +50,6 @@ async function updateBlog(req, res) {
     );
     res.json(updatedBlog);
   } catch (err) {
-    console.log(err);
     res.status(400).json(err);
   }
 }

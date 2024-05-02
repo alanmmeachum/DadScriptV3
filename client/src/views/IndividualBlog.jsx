@@ -11,11 +11,10 @@ const IndividualBlog = (props) => {
     http
       .get(`/blogs/${id}`)
       .then((res) => {
-        console.log(res.data);
         setCurrentBlog(res.data);
       })
-      .catch((error) => {
-        console.log(error);
+      .catch((err) => {
+        throw err;
       });
   }, []);
 

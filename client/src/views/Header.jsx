@@ -61,15 +61,10 @@ const Header = () => {
               </a>
             </li>
             <li > {/* revert back to button-87 */}
-              <a className="header__link" onClick={navigateContact}>
+              <a className="header__link button-87" onClick={navigateContact}>
                 Contact
               </a>
             </li>
-            {/* <li>
-              <a className="button-5" onClick={onCreateHandler}>
-                Create A Blog
-              </a>
-            </li> */}
           </ul>
           <button className="header__bars">
             <svg

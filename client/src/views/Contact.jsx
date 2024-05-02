@@ -9,18 +9,9 @@ const Contact = () => {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    emailjs
-      .sendForm("service_meebqd2", "template_a3nqvd8", form.current, {
-        publicKey: "alyv01y3I4mAGs6tJ",
-      })
-      .then(
-        (response) => {
-          console.log("SUCCESS!", response.status, response.text);
-        },
-        (error) => {
-          console.log("FAILED...", error);
-        }
-      );
+    emailjs.sendForm("service_meebqd2", "template_a3nqvd8", form.current, {
+      publicKey: "alyv01y3I4mAGs6tJ", //!Concerned about security here since my key is open!
+    });
     setTimeout(() => {
       navigate("/blogs");
     }, 2000);
@@ -337,17 +328,6 @@ const Contact = () => {
                   >
                     Submit
                   </button>
-                  {/* <div className="cont">
-                    <button type="submit" className="submit_button btn mt-2 inline-flex w-full items-center justify-center">
-                      <span>Submit</span>
-                      <img
-                        className="submit_image"
-                        src="https://i.cloudup.com/2ZAX3hVsBE-3000x3000.png"
-                        height="62"
-                        width="62"
-                      />
-                    </button>
-                  </div> */}
                 </div>
               </form>
             </div>
