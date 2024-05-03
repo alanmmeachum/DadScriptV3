@@ -13,5 +13,5 @@ dotenv.config();
 
 dbConnect();
 
-const PORT = 5001;
+const PORT = 8002;
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
