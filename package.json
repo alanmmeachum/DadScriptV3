@@ -10,6 +10,9 @@
         "install-server": "cd server && npm install && cd .. ",
         "heroku-postbuild": "npm run install-client && npm run install-server"
   },
+  "engines": {
+	"node": "21.x"
+},
   "author": "",
   "license": "ISC"
 }
