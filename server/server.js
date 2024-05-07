@@ -28,5 +28,4 @@ app.get("*", (req, res) =>
 
 dbConnect();
 
-const PORT = 8001;
-app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
+app.listen(8001, () => console.log(`Listening on port 8001`));
