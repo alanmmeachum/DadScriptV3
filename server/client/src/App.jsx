@@ -16,7 +16,7 @@ import "./css/index.css";
 
 function App() {
   const http = axios.create({
-    baseURL: "http://localhost:4000/api", //Need to figure out what to do with this so my DB can't be accessed anywhere
+    baseURL: "https://dadscript-0t55.onrender.com/", //Need to figure out what to do with this so my DB can't be accessed anywhere
   });
 
   const [currentTab, setCurrentTab] = useState(); //Trying to figure out how to keep the tab (Blog/About/Contact) selected orange when that tab is selected
