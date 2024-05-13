@@ -3,7 +3,7 @@ const About = () => {
     <div className="">
       <div className="relative isolate overflow-hidden pt-40 sm:pt-60 ">
         <img
-          src="/headshot.png"
+          src="/headshot.jpg"
           alt=""
           className="absolute inset-0 -z-10 object-cover "
         />

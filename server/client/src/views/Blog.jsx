@@ -35,7 +35,7 @@ const Blog = (props) => {
     <div className="">
       <div className="relative isolate overflow-hidden pt-40 pb-16 sm:pt-60">
         <img
-          src="/keyboard2.png"
+          src="/keybooard2.jpg"
           alt=""
           className="absolute inset-0 -z-10 object-cover"
         />
