@@ -1,7 +1,7 @@
 const Home = () => {
   return (
     <div>
-      <div className="bg-[url('/homebackground.png')] mx-auto flex flex-col items-center h-screen px-6 py-32 text-center sm:py-64 lg:px-0">
+      <div className="bg-[url('/homebackground.png')] mx-auto flex flex-col items-center px-6 py-32 text-center sm:py-64 lg:px-0">
         <h1 className="text-4xl font-bold tracking-tight text-white lg:text-6xl">
           DadScript the Blog
         </h1>
