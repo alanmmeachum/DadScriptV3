@@ -17,7 +17,7 @@ import Footer from "./views/Footer";
 
 function App() {
   const http = axios.create({
-    baseURL: "http://localhost:4000/api"
+    baseURL: "https://dadscript-0t55.onrender.com/api"
   });
 
   const [currentTab, setCurrentTab] = useState(); //Trying to figure out how to keep the tab (Blog/About/Contact) selected orange when that tab is selected
