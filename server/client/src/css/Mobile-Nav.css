@@ -24,15 +24,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .mobile-nav__link {
-  font-size: var(--size-l);
+  font-size: var(--size-2xl); 
   text-decoration: none;
   font-weight: 600;
   color: var(--color3-text);
-  letter-spacing: -0.05em;
   transition: color 0.3s;
 }
 
