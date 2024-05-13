@@ -68,7 +68,7 @@ const Blog = (props) => {
       <div className="absolute inset-0">
         <div className="h-1/3 sm:h-2/3" />
       </div>
-      <div className="relative mx-auto max-w-7xl">
+      <div className="relative mx-auto pt-4 max-w-7xl">
         <div className="text-center">
           <h2 className="text-3xl font-bold tracking-tight alan_font_color sm:text-5xl">From the blog</h2>
           <p className="mx-auto mt-3 max-w-2xl text-xl text-gray-400 sm:mt-4">
