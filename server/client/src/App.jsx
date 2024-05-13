@@ -13,10 +13,11 @@ import "./css/Header.css";
 import "./css/Mobile-Nav.css";
 import "./css/Blog.css";
 import "./css/index.css";
+import Footer from "./views/Footer";
 
 function App() {
   const http = axios.create({
-    baseURL: "https://dadscript-0t55.onrender.com/api"
+    baseURL: "http://localhost:4000/api"
   });
 
   const [currentTab, setCurrentTab] = useState(); //Trying to figure out how to keep the tab (Blog/About/Contact) selected orange when that tab is selected
@@ -37,6 +38,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );

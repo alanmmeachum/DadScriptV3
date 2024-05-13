@@ -1,13 +1,12 @@
 const About = () => {
   return (
     <div className="">
-      <div className="relative isolate overflow-hidden pt-40 sm:pt-60 ">
+      <div className="relative isolate overflow-hidden pt-40 sm:pt-60 alan_background_color">
         <img
           src="/headshot.jpg"
           alt=""
           className="absolute inset-0 -z-10 object-cover "
         />
-
         <div
           className="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl "
           aria-hidden="true"
@@ -34,8 +33,8 @@ const About = () => {
         </div>
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8 ">
-          <div className="mx-auto max-w-2xl lg:mx-0">
-            <h2 className="text-6xl font-bold tracking-tight text-white">
+          <div className="mx-auto max-w-2xl lg:mx-0 ">
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight  text-white">
               About Me
             </h2>
             <p className="mt-6 text-m leading-8 text-white italics">
@@ -46,29 +45,26 @@ const About = () => {
         </div>
         <div className="px-6 py-10 lg:px-8 alan_background_color">
           <div className="mx-auto max-w-3xl text-base leading-7 text-white ">
-            <p className="text-base font-semibold leading-7 alan_font_color">
-              Introducing
-            </p>
-            <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-400 sm:text-4xl">
+            <h1 className="mt-2 text-3xl font-bold tracking-tight alan_font_color sm:text-4xl">
               DadScript: The Beginning
             </h1>
             <figcaption className="mt-4 flex gap-x-2 text-m leading-6 text-gray-400 italics pb-5">
               --About a 3 minute read.
             </figcaption>
-            <p className="mt-4 text-2xl leading-8">
+            <p className="mt-4 leading-8">
               Hello there! I'm Alan, and I'm here to share with you the journey
               of a guy navigating his way through the world of coding. But let's
               rewind a bit, back to 1995, the year of my arrival on this planet.
             </p>
             <div className="mt-10 max-w-2xl ">
-              <p className="text-2xl">Well...maybe not that far back...</p>
-              <p className="mt-6 text-2xl">
+              <p className="italic">Well...maybe not that far back...</p>
+              <p className="mt-6">
                 Like many, my path has been a winding one, filled with trials,
                 triumphs, and plenty of detours. After dipping my toes into
                 various industries, I found myself drawn to the allure of coding
                 - the promise of not just a career, but a passion.
               </p>
-              <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-400">
+              <h2 className="mt-16 text-2xl font-bold tracking-tight  alan_font_color">
                 The Journey...
               </h2>
               <p className="mt-6">
@@ -109,7 +105,7 @@ const About = () => {
             </div>
             <figure className="mt-16"></figure>
             <div className="mt-16 max-w-2xl">
-              <h2 className="text-2xl font-bold tracking-tight text-gray-400">
+              <h2 className="text-2xl font-bold tracking-tight alan_font_color">
                 What's next?
               </h2>
               <p className="mt-6">
