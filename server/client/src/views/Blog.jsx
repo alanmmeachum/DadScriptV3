@@ -64,17 +64,18 @@ const Blog = (props) => {
           />
         </div>
         </div>
-<div className="relative px-6 pb-20 lg:px-8 lg:pb-28 alan_background_color lg:pt-24">
+<div className="relative px-6 pb-20 lg:px-8 lg:pb-28 lg:pt-24">
       <div className="absolute inset-0">
         <div className="h-1/3 sm:h-2/3" />
       </div>
-      <div className="relative mx-auto max-w-7xl pt-4">
+      <div className="relative mx-auto max-w-7xl">
         <div className="text-center">
           <h2 className="text-3xl font-bold tracking-tight alan_font_color sm:text-5xl">From the blog</h2>
           <p className="mx-auto mt-3 max-w-2xl text-xl text-gray-400 sm:mt-4">
           Code Chronicles: Navigating the Path to Developer Mastery
           </p>
         </div>
+        <div className="mx-auto grid max-w-2xl border-t border-gray-500 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3"/>
         <div className="mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
           {allBlogs.map((post) => (
             <Link to={`/blogs/${post._id}`}>
@@ -82,7 +83,7 @@ const Blog = (props) => {
               <div className="flex-shrink-0">
                 <img className="h-48 w-full object-cover" src="/keyboard2.jpg" alt="" />
               </div>
-              <div className="flex flex-1 flex-col justify-between bg-zinc-900 p-6">
+              <div className="flex flex-1 flex-col justify-between bg-[url('/homebackground.png')] p-6">
                 <div className="flex-1">
                   <p className="text-sm font-medium alan_font_color">
                     <a className="hover:underline">

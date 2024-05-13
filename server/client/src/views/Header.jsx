@@ -9,6 +9,10 @@ const Header = () => {
     isClicked ? setIsClicked(false) : setIsClicked(true);
   };
 
+  const navigateHome = () => {
+    navigate("/");
+  };
+
   const navigateBlog = () => {
     navigate("/blogs");
   };
@@ -21,8 +25,9 @@ const Header = () => {
     navigate("/contact");
   };
 
-  const onCreateHandler = (id) => {
-    navigate("/blogs/create");
+  const navigateHomeMobile = () => {
+    navigate("/");
+    setIsClicked(false);
   };
 
   const navigateBlogMobile = () => {
@@ -50,6 +55,11 @@ const Header = () => {
         />
         <nav>
           <ul className="header__menu">
+          <li>
+              <a className="header__link" onClick={navigateHome}>
+                Home
+              </a>
+            </li>
             <li>
               <a className="header__link" onClick={navigateBlog}>
                 Blog
@@ -90,6 +100,11 @@ const Header = () => {
       <div className={isClicked ? "mobile-nav show" : "mobile-nav"}>
         <nav>
           <ul className="mobile-nav__menu">
+          <li>
+              <a className="mobile-nav__link" onClick={navigateHomeMobile}>
+                Home
+              </a>
+            </li>
             <li>
               <a className="mobile-nav__link" onClick={navigateAboutMobile}>
                 About
