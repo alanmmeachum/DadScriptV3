@@ -9,71 +9,50 @@ const Header = () => {
     isClicked ? setIsClicked(false) : setIsClicked(true);
   };
 
-  const navigateHome = () => {
-    navigate("/");
-  };
-
-  const navigateBlog = () => {
-    navigate("/blogs");
-  };
-
-  const navigateAbout = () => {
-    navigate("/about");
-  };
-
-  const navigateContact = () => {
-    navigate("/contact");
-  };
-
-  const navigateHomeMobile = () => {
-    navigate("/");
-    setIsClicked(false);
-  };
-
-  const navigateBlogMobile = () => {
-    navigate("/blogs");
-    setIsClicked(false);
-  };
-
-  const navigateContactMobile = () => {
-    navigate("/contact");
-    setIsClicked(false);
-  };
-
-  const navigateAboutMobile = () => {
-    navigate("/about");
+  const onClickNavigation = (e) => {
+    navigate(`/${e.target.name}`);
     setIsClicked(false);
   };
 
   return (
     <>
       <header className="header container">
-        <img
-          className="logo"
-          src="/DadScriptWhite.svg"
-          alt="site logo"
-        />
+        <img className="logo" src="/DadScriptWhite.svg" alt="site logo" />
         <nav>
           <ul className="header__menu">
-          <li>
-              <a className="header__link" onClick={navigateHome}>
+            <li>
+              <a
+                className="header__link"
+                name=""
+                onClick={(e) => onClickNavigation(e)}
+              >
                 Home
               </a>
             </li>
             <li>
-              <a className="header__link" onClick={navigateBlog}>
+              <a
+                className="header__link"
+                name="Blogs"
+                onClick={(e) => onClickNavigation(e)}
+              >
                 Blog
               </a>
             </li>
             <li>
-              <a className="header__link" onClick={navigateAbout}>
+              <a
+                className="header__link"
+                name="About"
+                onClick={(e) => onClickNavigation(e)}
+              >
                 About
               </a>
             </li>
             <li>
-              {" "}
-              {/* revert back to button-87 */}
-              <a className="header__link button-87" onClick={navigateContact}>
+              <a
+                className="header__link button-87"
+                name="Contact"
+                onClick={(e) => onClickNavigation(e)}
+              >
                 Contact
               </a>
             </li>
@@ -100,23 +79,39 @@ const Header = () => {
       <div className={isClicked ? "mobile-nav show" : "mobile-nav"}>
         <nav>
           <ul className="mobile-nav__menu">
-          <li>
-              <a className="mobile-nav__link" onClick={navigateHomeMobile}>
+            <li>
+              <a
+                className="mobile-nav__link"
+                name=""
+                onClick={(e) => onClickNavigation(e)}
+              >
                 Home
               </a>
             </li>
             <li>
-              <a className="mobile-nav__link" onClick={navigateAboutMobile}>
+              <a
+                className="mobile-nav__link"
+                name="About"
+                onClick={(e) => onClickNavigation(e)}
+              >
                 About
               </a>
             </li>
             <li>
-              <a className="mobile-nav__link" onClick={navigateBlogMobile}>
+              <a
+                className="mobile-nav__link"
+                name="Blogs"
+                onClick={(e) => onClickNavigation(e)}
+              >
                 Blog
               </a>
             </li>
             <li>
-              <a className="mobile-nav__link" onClick={navigateContactMobile}>
+              <a
+                className="mobile-nav__link"
+                name="Contact"
+                onClick={(e) => onClickNavigation(e)}
+              >
                 Contact
               </a>
             </li>
