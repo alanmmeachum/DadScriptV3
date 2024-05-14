@@ -54,7 +54,7 @@ const IndividualBlog = (props) => {
         </div>
         <div className="px-6 py-10 lg:px-8">
           <div className=" mx-auto max-w-3xl text-base leading-7 text-white ">
-            {parse("" + currentBlog.content)}
+            {parse(`${currentBlog.content}`)}
           </div>
         </div>
       </div>
