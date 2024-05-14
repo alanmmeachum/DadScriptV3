@@ -32,8 +32,8 @@ const Blog = (props) => {
     return calculation;
   };
   return (
-    <div>
-    <div className="relative isolate overflow-hidden sm:pt-60">
+    <div className="">
+    <div className="relative isolate overflow-hidden sm:pt-60 ">
         <img
           src="/keyboard2.jpg"
           alt=""
@@ -64,7 +64,7 @@ const Blog = (props) => {
           />
         </div>
         </div>
-<div className="relative px-6 pb-20 lg:px-8 pt-4 lg:pb-28 lg:pt-24">
+<div className="relative px-6 pb-20 lg:px-8 pt-4 lg:pb-28 lg:pt-24 gradient_background">
       <div className="absolute inset-0">
         <div className="h-1/3 sm:h-2/3" />
       </div>
@@ -79,7 +79,7 @@ const Blog = (props) => {
         <div className="mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
           {allBlogs.map((post) => (
             <Link to={`/blogs/${post._id}`}>
-            <div key={post.title} className="flex flex-col overflow-hidden rounded-lg shadow-lg">
+            <div key={post.title} className="flex flex-col overflow-hidden rounded-lg shadow-lg ">
               <div className="flex-shrink-0">
                 <img className="h-48 w-full object-cover" src="/keyboard2.jpg" alt="" />
               </div>
