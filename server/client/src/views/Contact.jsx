@@ -1,26 +1,25 @@
 import { EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/outline";
 import { useNavigate } from "react-router-dom";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-
+import Submitted from "../components/Submitted";
 const Contact = () => {
-  const navigate = useNavigate();
   const form = useRef();
+  const [showSubmitted, setShowSubmitted] = useState(false);
 
   const onSubmitHandler = (e) => {
+    setShowSubmitted(!showSubmitted);
     e.preventDefault();
     emailjs.sendForm("service_meebqd2", "template_a3nqvd8", form.current, {
       publicKey: "alyv01y3I4mAGs6tJ", //!Concerned about security here since my key is open!
     });
-    setTimeout(() => {
-      navigate("/blogs");
-    }, 2000);
   };
 
   return (
     <div className="">
       <div className="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8">
-        <div className="relative bg-white shadow-xl">
+        {showSubmitted ? <Submitted /> : null}
+        <div className="relative bg-white shadow-xl m-2">
           <h2 className="sr-only">Contact us</h2>
 
           <div className="grid grid-cols-1 lg:grid-cols-3">

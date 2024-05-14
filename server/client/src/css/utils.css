@@ -49,6 +49,11 @@
   display: none;
 }
 
+/* For contact form */
+.submitted {
+  display: none;
+}
+
 /* xs */
 @media (min-width: 475px) {
   .container {

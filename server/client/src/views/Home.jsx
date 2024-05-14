@@ -1,4 +1,7 @@
-const Home = () => {
+
+const Home = (props) => {
+
+
   return (
     <div>
       <div className="mx-auto flex flex-col items-center px-6 py-32 text-center relative min-h-screen sm:py-64 lg:px-0">
@@ -11,6 +14,7 @@ const Home = () => {
         <a href="/blogs" className="mt-8 sm:text-4xl button-87">
           Check out the Blog!
         </a>
+
       </div>
     </div>
   );
