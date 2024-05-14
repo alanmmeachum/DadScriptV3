@@ -1,7 +1,7 @@
 const Home = () => {
   return (
     <div>
-      <div className="gradient_background mx-auto flex flex-col items-center px-6 py-32 text-center relative min-h-screen sm:py-64 lg:px-0">
+      <div className="mx-auto flex flex-col items-center px-6 py-32 text-center relative min-h-screen sm:py-64 lg:px-0">
         <h1 className="text-4xl font-bold tracking-tight text-white lg:text-6xl">
           DadScript the Blog
         </h1>
