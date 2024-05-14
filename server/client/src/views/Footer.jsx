@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="alan_background_color h-min">
+    <footer className="alan_background_color absolute w-full">
       <div className="mx-auto max-w-7xl overflow-hidden px-6 lg:px-8">
         <div className="mt-10 flex justify-center space-x-10">
           <ul role="list" className="mt-8 flex space-x-12">

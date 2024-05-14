@@ -38,7 +38,7 @@
   margin: 0;
   line-height: calc(1em + 0.7rem);
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif
+  font-family: Arial, Helvetica, sans-serif;
 }
 html {
   scroll-behavior: smooth;
@@ -61,4 +61,8 @@ svg {
 
 .alan_background_color {
   background-color: black;
+}
+
+.gradient_background {
+  background: linear-gradient(#000000 , #ff914d95, black, black);;
 }
