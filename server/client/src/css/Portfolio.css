@@ -1,6 +1,6 @@
 .blog_video {
     max-width: 100%;
-    height: 100%;
+    height: auto;
     border-radius: 15px;
     border: .1px groove rgb(84, 83, 83);
     /* box-shadow: rgba(155, 114, 60, 0.25) 0px 50px 100px -20px, rgba(141, 93, 93, 0.233) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; */
