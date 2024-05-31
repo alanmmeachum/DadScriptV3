@@ -1,0 +1,17 @@
+.home_body {
+        background-image: url('/5075841.jpg');
+        background-size: contain;
+        background-position: center center;
+}
+
+@media (max-width: 600px) {
+    .home_body {
+        background-size: auto 100%;
+    }
+}
+
+@media (min-width: 601px) {
+    .home_body {
+        background-size: cover;
+    }
+}

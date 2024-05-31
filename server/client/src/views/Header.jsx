@@ -49,6 +49,15 @@ const Header = () => {
             </li>
             <li>
               <a
+                className="header__link"
+                name="Portfolio"
+                onClick={(e) => onClickNavigation(e)}
+              >
+                Portfolio
+              </a>
+            </li>
+            <li>
+              <a
                 className="header__link button-87"
                 name="Contact"
                 onClick={(e) => onClickNavigation(e)}
@@ -95,6 +104,15 @@ const Header = () => {
                 onClick={(e) => onClickNavigation(e)}
               >
                 About
+              </a>
+            </li>
+            <li>
+              <a
+                className="mobile-nav__link"
+                name="Portfolio"
+                onClick={(e) => onClickNavigation(e)}
+              >
+                Portfolio
               </a>
             </li>
             <li>
