@@ -8,6 +8,7 @@ import Footer from "./views/Footer";
 import Header from "./views/Header";
 import Home from "./views/Home";
 import IndividualBlog from "./views/IndividualBlog";
+import Portfolio from "./views/Portfolio";
 import "./css/Contact.css";
 import "./css/App.css";
 import "./css/utils.css";
@@ -15,6 +16,8 @@ import "./css/Header.css";
 import "./css/Mobile-Nav.css";
 import "./css/Blog.css";
 import "./css/index.css";
+import "./css/Home.css";
+import "./css/Portfolio.css"
 
 function App() {
   const http = axios.create({
@@ -29,14 +32,10 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route
-            path="/blogs"
-            element={
-              <Blog http={http} allBlogs={allBlogs} setAllBlogs={setAllBlogs} />
-            }
-          />
+          <Route path="/blogs" element={<Blog http={http} allBlogs={allBlogs} setAllBlogs={setAllBlogs} />} />
           <Route path="/blogs/:id" element={<IndividualBlog http={http} />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/about" element={<About />} />
         </Routes>
         <Footer />
