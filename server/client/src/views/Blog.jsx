@@ -64,26 +64,24 @@ const Blog = (props) => {
           />
         </div>
         </div>
-<div className="relative px-6 pb-20 lg:px-8 pt-4 lg:pb-28 lg:pt-24">
-      <div className="absolute inset-0">
-        <div className="h-1/3 sm:h-2/3" />
-      </div>
-      <div className="relative mx-auto pt-4 max-w-7xl">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tight alan_font_color sm:text-5xl">From the blog</h2>
-          <p className="mx-auto mt-3 max-w-2xl text-xl text-gray-400 sm:mt-4">
-          Code Chronicles: Navigating the Path to Developer Mastery
-          </p>
-        </div>
+<div className="relative px-6 pb-20 lg:px-8 lg:pb-28 lg:pt-10">
+      <div className="relative mx-auto max-w-7xl">
+          <h2 className="text-3xl text-center font-bold tracking-tight alan_font_color sm:text-5xl">THE BLOG</h2>
+          <p className="mt-6 text-m text-center leading-8 text-white italics">
+              "Focus on the journey, not the destination. Joy is found not in finishing an activity but in doing it."
+            </p>
+            <p className="mt-6 text-base text-center leading-8 text-white italics">
+              - Greg Anderson
+            </p>
         <div className="mx-auto grid max-w-2xl border-t border-gray-500 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3"/>
         <div className="mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
           {allBlogs.map((post) => (
             <Link to={`/blogs/${post._id}`}>
-            <div key={post.title} className="flex flex-col overflow-hidden rounded-lg shadow-lg ">
+            <div key={post.title} className="flex flex-col overflow-hidden blog_box_style">
               <div className="flex-shrink-0">
-                <img className="h-48 w-full object-cover" src="/keyboard2.jpg" alt="" />
+                <img className="h-48 w-full object-cover" src="/blog.png" alt="" />
               </div>
-              <div className="flex flex-1 flex-col justify-between bg-[url('/homebackground.png')] p-6">
+              <div className="flex flex-1 flex-col justify-between p-6">
                 <div className="flex-1">
                   <p className="text-sm font-medium alan_font_color">
                     <a className="hover:underline">

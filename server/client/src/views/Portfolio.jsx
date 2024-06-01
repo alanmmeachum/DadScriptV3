@@ -7,7 +7,7 @@ const Portfolio = () => {
   ];
 
   return (
-    <div className="py-24 sm:py-32">
+    <div className="pb-24 pt-10 sm:pb-60 sm:pt-10">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 items-start gap-x-8 gap-y-16 sm:gap-y-24 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <div className="lg:pr-4">
@@ -19,7 +19,7 @@ const Portfolio = () => {
               <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-500 sm:text-4xl">DadScript: The Blog</h1>
               <div className="max-w-xl">
                 <p className="mt-6 text-white">
-                DadScript.com is a personal blog meticulously designed and developed to document my journey as a software developer. It features insightful articles, comprehensive tutorials, and showcases of my projects. The blog is built using a robust tech stack, including React, JavaScript, MongoDB, CSS, Tailwind CSS, and Render services. 
+                DadScript.com is a personal blog meticulously designed and developed to document my journey as a software developer. The blog is built using a robust tech stack, including React, JavaScript, MongoDB, CSS, Tailwind CSS, and Render services. 
                 </p>
                 <a className="text-indigo-200 hover:text-indigo-100" href="https://github.com/alanmmeachum/DadScriptV3">
                   <span className="sr-only">GitHub</span>
