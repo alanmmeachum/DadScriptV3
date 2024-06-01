@@ -1,12 +1,13 @@
 const About = () => {
   return (
     <div className="">
-      <div className="relative isolate overflow-hidden pt-40 sm:pt-60 alan_background_color">
+      <div className="relative isolate overflow-hidden pt-40 sm:pt-60 ">
         <img
           src="/headshot.jpg"
           alt=""
-          className="absolute inset-0 -z-10 object-cover "
+          className="absolute h-auto w-auto inset-0 -z-10 alan_background_color"
         />
+        </div>
         <div
           className="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl "
           aria-hidden="true"
@@ -32,20 +33,19 @@ const About = () => {
           />
         </div>
 
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 ">
-          <div className="mx-auto max-w-2xl lg:mx-0 ">
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight  text-white">
-              About Me
-            </h2>
-            <p className="mt-6 text-m leading-8 text-white italics">
+        <div className="relative px-6 pb-20 lg:px-8 lg:pt-10">
+          <div className="relative mx-auto pt-4 max-w-7xl">
+          <h2 className="text-3xl text-center font-bold tracking-tight alan_font_color sm:text-5xl">ABOUT ME</h2>
+            <p className="mt-6 text-m text-center leading-8 text-white italics">
               " I don't know what regret looks like, and I'd like to keep it
               that way. "
             </p>
+          <div className="mx-auto grid max-w-2xl border-t border-gray-500 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3"/>
           </div>
         </div>
-        <div className="px-6 py-10 lg:px-8 alan_background_color">
+        <div className="px-6 pb-20 lg:px-8 ">
           <div className="mx-auto max-w-3xl text-base leading-7 text-white ">
-            <h1 className="mt-2 text-3xl font-bold tracking-tight alan_font_color sm:text-4xl">
+            <h1 className="text-3xl font-bold tracking-tight alan_font_color sm:text-4xl">
               DadScript: The Beginning
             </h1>
             <figcaption className="mt-4 flex gap-x-2 text-m leading-6 text-gray-400 italics pb-5">
@@ -126,7 +126,7 @@ const About = () => {
           </div>
         </div>
       </div>
-    </div>
+
   );
 };
 

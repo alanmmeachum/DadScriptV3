@@ -56,7 +56,7 @@ const Header = () => {
                 Portfolio
               </a>
             </li>
-            <li>
+            <span>
               <a
                 className="header__link button-87"
                 name="Contact"
@@ -64,7 +64,7 @@ const Header = () => {
               >
                 Contact
               </a>
-            </li>
+            </span>
           </ul>
           <button className="header__bars">
             <svg
