@@ -5,7 +5,7 @@ const About = () => {
         <img
           src="/headshot.jpg"
           alt=""
-          className="absolute h-auto w-auto inset-0 -z-10 alan_background_color"
+          className="absolute inset-0 -z-10 object-cover"
         />
         </div>
         <div

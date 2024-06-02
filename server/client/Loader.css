@@ -4,7 +4,6 @@ body {
   background-color: #030303e9; /* Set your desired background color here */
 }
 
-
 .hidden {
   display: none;
 }
@@ -18,7 +17,8 @@ body {
   background-color: black;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start; /* Align items to the start to position loader higher */
+  padding-top: 32vh; /* Add padding to push loader down a bit, adjust as needed */
   z-index: 9999;
 }
 

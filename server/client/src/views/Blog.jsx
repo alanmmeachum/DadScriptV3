@@ -21,7 +21,7 @@ const Blog = (props) => {
   };
   return (
     <div className="">
-    <div className="relative isolate overflow-hidden sm:pt-60 ">
+    <div className="relative isolate overflow-hidden pt-40 sm:pt-60 ">
         <img
           src="/keyboard2.jpg"
           alt=""
