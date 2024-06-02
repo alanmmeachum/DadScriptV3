@@ -53,9 +53,9 @@ p {
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   }
 .blog_box_style:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgb(255, 145, 77, 0.25),
-    0 10px 10px rgb(255, 145, 77, 0.22), 0 0 120px -10px var(--color1-orange);
+  transform: translateY(-10px);
+  box-shadow: 0 10px 10px rgb(255, 145, 77, 0.25),
+    0 10px 10px rgb(255, 145, 77, 0.22), 0 0 10px -5px var(--color1-orange);
 }  
 .italics {
   font-style: italic;

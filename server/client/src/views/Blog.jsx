@@ -2,19 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const Blog = (props) => {
-  const [featuredPost, setFeaturedPost] = useState({});
   const { http, allBlogs, setAllBlogs } = props;
-
-  useEffect(() => {
-    http
-      .get("/blogs/662079a7d5a0ac45f25f052d")
-      .then((res) => {
-        setFeaturedPost(res.data);
-      })
-      .catch((err) => {
-        throw err;
-      });
-  }, []);
 
   useEffect(() => {
     http

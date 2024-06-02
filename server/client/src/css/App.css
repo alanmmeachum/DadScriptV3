@@ -42,7 +42,6 @@
 }
 html {
   scroll-behavior: smooth;
-  background-color: var(--color4-background);
 }
 
 img,
