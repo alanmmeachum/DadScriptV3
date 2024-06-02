@@ -16,14 +16,11 @@
     <div class="loader-overlay">
         <div class="loader"></div>
     </div>
-    <script>
+    <script type="module">
+        import './src/main.jsx';
+
         function load() {
             setTimeout(function() {
-                var script = document.createElement('script');
-                script.type = 'module';
-                script.src = '/src/main.jsx';
-                document.body.appendChild(script);
-                
                 // Hide the loader and show the content
                 var loaderOverlay = document.querySelector('.loader-overlay');
                 var root = document.getElementById('root');
@@ -33,7 +30,7 @@
                 if (root) {
                     root.classList.remove('hidden');
                 }
-                
+
                 // Revert body background color to original by removing the class
                 document.body.classList.remove('loading');
             }, 2000);
