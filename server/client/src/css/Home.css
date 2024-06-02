@@ -1,6 +1,7 @@
 .home_body {
         background-image: url('/5075841.jpg');
         background-size: contain;
+        background-repeat: no-repeat;
         background-position: center center;
 }
 
@@ -15,3 +16,4 @@
         background-size: cover;
     }
 }
+

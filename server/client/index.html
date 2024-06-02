@@ -1,13 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DadScript</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+    <link rel="stylesheet" href="./Loader.css">
+    <style>
+        body.loading {
+            background-color: black;
+        }
+    </style>
+</head>
+<body class="background_color loading">
+    <div id="root" class="hidden"></div>
+    <div class="loader-overlay">
+        <div class="loader"></div>
+    </div>
+    <script>
+        function load() {
+            setTimeout(function() {
+                var script = document.createElement('script');
+                script.type = 'module';
+                script.src = '/src/main.jsx';
+                document.body.appendChild(script);
+                
+                // Hide the loader and show the content
+                var loaderOverlay = document.querySelector('.loader-overlay');
+                var root = document.getElementById('root');
+                if (loaderOverlay) {
+                    loaderOverlay.style.display = 'none';
+                }
+                if (root) {
+                    root.classList.remove('hidden');
+                }
+                
+                // Revert body background color to original by removing the class
+                document.body.classList.remove('loading');
+            }, 2000);
+        }
+        load();
+    </script>
+</body>
 </html>

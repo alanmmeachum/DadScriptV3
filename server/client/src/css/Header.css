@@ -1,5 +1,5 @@
 .logo {
-  width: var(--image-size-s);
+  width: var(--image-size-xs);
   cursor: pointer;
 }
 
@@ -23,6 +23,7 @@
   z-index: 9999;
   position: sticky;
   top: 0;
+  background-color: black;
 }
 
 .header__menu {
@@ -143,6 +144,8 @@ ul:hover li:hover ~ li:before {
   .header__bars {
     display: none;
   }
+
+  
 }
 
 /* lg */
@@ -190,7 +193,7 @@ ul:hover li:hover ~ li:before {
 /* 2xl */
 @media (min-width: 1536px) {
   .logo {
-    width: var(--image-size-m);
+    width: var(--image-size-l);
   }
 
   .header_button {
@@ -216,7 +219,7 @@ ul:hover li:hover ~ li:before {
 
 @media (min-width: 2560px) {
   .logo {
-    width: var(--image-size-m);
+    width: var(--image-size-l);
   }
 
   .header_button {
