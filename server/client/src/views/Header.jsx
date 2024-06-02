@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [isClicked, setIsClicked] = useState(false);
+  const [isTabClicked, setIsTabClicked] = useState("")
+
   const navigate = useNavigate();
 
   const onClickHandler = () => {
@@ -10,20 +12,26 @@ const Header = () => {
   };
 
   const onClickNavigation = (e) => {
-    navigate(`/${e.target.name}`);
+    setIsTabClicked(e.target.name)
+    if(e.target.name === "Home") {
+      navigate('/')
+    } else {
+      navigate(`/${e.target.name}`);
+    }
     setIsClicked(false);
   };
 
   return (
     <>
       <header className="header container">
-        <img className="logo" src="/DadScriptWhite.svg" alt="site logo" />
+        <img className="logo" src="/DadScriptWhite.svg" alt="site logo" name="Home" onClick={onClickNavigation} />
         <nav>
           <ul className="header__menu">
             <li>
               <a
                 className="header__link"
-                name=""
+                style={{color: isTabClicked == "Home" ? `var(--color1-orange)`: ""}}
+                name="Home"
                 onClick={(e) => onClickNavigation(e)}
               >
                 Home
@@ -32,6 +40,7 @@ const Header = () => {
             <li>
               <a
                 className="header__link"
+                style={{color: isTabClicked == "Blogs" ? `var(--color1-orange)`: ""}}
                 name="Blogs"
                 onClick={(e) => onClickNavigation(e)}
               >
@@ -40,7 +49,8 @@ const Header = () => {
             </li>
             <li>
               <a
-                className="header__link"
+                className= "header__link"
+                style={{color: isTabClicked == "About" ? `var(--color1-orange)`: ""}}
                 name="About"
                 onClick={(e) => onClickNavigation(e)}
               >
@@ -49,7 +59,8 @@ const Header = () => {
             </li>
             <li>
               <a
-                className="header__link"
+                className= "header__link"
+                style={{color: isTabClicked == "Portfolio" ? `var(--color1-orange)`: ""}}
                 name="Portfolio"
                 onClick={(e) => onClickNavigation(e)}
               >
