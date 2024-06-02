@@ -3,6 +3,8 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center center;
+        margin-top: -5px;
+        margin-left: -5px;
 }
 
 @media (max-width: 600px) {
