@@ -1,9 +1,14 @@
 .logo {
   width: var(--image-size-s);
+  cursor: pointer;
 }
 
 .header_title {
   font-size: var(--size-2xl);
+}
+
+.isClickedHeader {
+  color: red;
 }
 
 .header {
